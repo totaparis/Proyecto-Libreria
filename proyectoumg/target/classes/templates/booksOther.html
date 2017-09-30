@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Books</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h2>Libros</h2>
+		<p>Se muestran todos los libros en la tabla:</p>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>Categoria</th>
+					<th>Descripcion</th>
+					<th>Estado</th>
+					<th>Activo</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="book : ${books}">
+					<th><span th:text="${book.name}">Name</span></th>
+					<th><span th:text="${book.idcategory}">Name</span></th>
+					<th><span th:text="${book.description}">Name</span></th>
+					<th><span th:text="${book.status}">Name</span></th>
+					<th><span th:text="${book.active}">Name</span></th>
+				</tr>
+			</tbody>
+		</table>
+		<div class="row">
+			<button type="button" class="btn btn-success">Agregar</button>
+			<button type="button" class="btn btn-danger">Eliminar</button>
+			<button type="button" class="btn btn-info">Buscar</button>
+		</div>
+		<form class="form-horizontal" action="#" th:action="@{/books/addbook}"
+			th:object="${book}" method="post">
+			<div class="form-group">
+				<label>Nombre:</label> <input type="text" class="form-control"
+					placeholder="Nombre Libro" th:field="*{name}"></input>
+			</div>
+			<div class="form-group">
+				<label>idCategory:</label> <input type="number" class="form-control"
+					placeholder="id category" th:field="*{idcategory}"></input>
+			</div>
+			<div class="form-group">
+				<label>Descripcion:</label> <input type="text" class="form-control"
+					placeholder="Descripcion" th:field="*{description}"></input>
+			</div>
+			<button type="submit" value="ENVIAR" class="btn btn-success">Submit</button>
+		</form>
+	</div>
+</body>
+</html>

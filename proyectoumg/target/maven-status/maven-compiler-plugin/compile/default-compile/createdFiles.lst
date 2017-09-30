@@ -1,0 +1,9 @@
+com\libreria\component\BookComponent.class
+com\libreria\controller\BookController.class
+com\libreria\entity\Book.class
+com\libreria\service\BookService.class
+com\libreria\service\impl\BookServiceImpl.class
+com\libreria\controller\ClassExample.class
+com\libreria\model\Libro.class
+com\libreria\ProyectoumgApplication.class
+com\libreria\repository\BookJpaRepository.class
